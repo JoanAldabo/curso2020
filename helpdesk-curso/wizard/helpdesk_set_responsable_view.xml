@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <form string="Set responsable">
                     <p>Are you sure you want to set as responsable?</p>
+                    <p><field name="tickets_qty"/></p>
                     <footer>
                         <button name="set_current_user_as_responsable" type="object" string="Confim" class="btn-primary"/>
                         <button type="object" string="Discard" class="btn-secondary" special="cancell"/>
