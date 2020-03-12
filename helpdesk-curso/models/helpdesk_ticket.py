@@ -22,10 +22,12 @@ class HelpdeskTicket (models.Model):
         column1="ticket_id", column2="user_id",
         string='Users',
     )
-    # """
-    # @api.onchange('team_id')
-    # def onchange_method(self):
-    #     if self.team_id is not None and self.team_id is not False and self.team_id != [] and \
-    #             self.team_id.user_ids is not None and self.team_id.user_ids is not False and self.team_id.user_ids != []:
-    #         self.user_ids = [user for user in self.team_id.user_ids]
-    # """
+
+    @api.onchange('team_id')
+    def onchange_method(self):
+        if self.team_id is not None and self.team_id is not False and self.team_id != [] and \
+                self.team_id.user_ids is not None and self.team_id.user_ids is not False and self.team_id.user_ids != []:
+            self.user_ids = [user.id for user in self.team_id.user_ids]
+        else:
+            self.user_ids = []
+

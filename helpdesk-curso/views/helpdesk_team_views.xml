@@ -20,7 +20,9 @@
                                 <field name="name"/>
                             </group>
                             <group>
-                                <!--<field name="user_ids" widget="one2many_tags"/>-->
+                                <group>
+                                    <field name="user_ids" widget="one2many_tags"/>
+                                </group>
                             </group>
                         </group>
                         <group name="ticket_ids" string="Tickets">
