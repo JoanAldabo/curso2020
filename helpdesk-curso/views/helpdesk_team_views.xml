@@ -21,7 +21,7 @@
                             </group>
                             <group>
                                 <group>
-                                    <field name="user_ids" widget="one2many_tags"/>
+                                    <field name="user_ids" widget="many2many_tags"/>
                                 </group>
                             </group>
                         </group>

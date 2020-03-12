@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="helpdesk_set_responsable_wiz_view_form" model="ir.ui.view">
+            <field name="name">helpdesk_set_responsable_view_form</field>
+            <field name="model">helpdesk.set.responsable.wiz</field>
+            <field name="arch" type="xml">
+                <form string="Set responsable">
+                    <p>Are you sure you want to set as responsable?</p>
+                    <footer>
+                        <button name="set_current_user_as_responsable" type="object" string="Confim" class="btn-primary"/>
+                        <button type="object" string="Discard" class="btn-secondary" special="cancell"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="helpdesk-curso.action_helpdesk_set_responsable_wiz" model="ir.actions.act_window">
+            <field name="name">Set responsable</field>
+            <field name="res_model">helpdesk.set.responsable.wiz</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="helpdesk_set_responsable_wiz_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
