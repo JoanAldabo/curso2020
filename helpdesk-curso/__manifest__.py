@@ -17,7 +17,8 @@
         'views/helpdesk_menu_views.xml',
     ],
     'depends': [
-        'base'
+        'base',
+        'mail',
     ],
     'application': True,
     'installable': True,

@@ -21,7 +21,8 @@
                             <field name="date_deadline"/>
                         </group>
                         <button name="set_current_user_as_responsable" string="Set responsable" type="object"/>
-                        <button name="%(action_helpdesk_set_responsable_wiz)d" string="Set responsable (Wizard)" type="action"/>
+                        <button name="%(action_helpdesk_set_responsable_wiz)d" string="Set responsable (Wizard)"
+                                type="action"/>
                     </group>
                     <group name="stage_id" string="Stage">
                         <field name="stage_id" nolabel="1"/>
@@ -31,6 +32,7 @@
                     </group>
                     <group name="responsable" string="Responsable">
                         <field name="responsable_id" widget="many2many_selection" nolabel="1"/>
+                        <field name="ticket_qty" readonly="1"/>
                     </group>
                     <group name="team_id" string="Team">
                         <field name="team_id"/>
@@ -39,6 +41,11 @@
                         <field name="user_ids" widget="many2many_tags" nolabel="1"/>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>
